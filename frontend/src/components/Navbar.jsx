@@ -20,20 +20,20 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="">
-          <Link to="/settings" className="transition-all flex items-center justify-center gap-1.5">
-            <IoSettingsSharp className="w-4 h-4" />
+        <div className="flex gap-4">
+          <Link to="/settings" className="transition-all flex items-center justify-center gap-1.5 hover:opacity-80">
+            <IoSettingsSharp className="size-5" />
             <span className="hidden sm:block">Settings</span>
           </Link>
 
           {authUser && (
             <>
-              <Link to="/profile" className="">
+              <Link to="/profile" className="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
                 <FaUser className="size-5" />
                 <span className="hidden sm:block">Profile</span>
               </Link>
 
-              <button className="flex gap-2 items-center" onClick={logout}>
+              <button className="flex gap-1.5 items-center cursor-pointer hover:opacity-80" onClick={logout}>
                 <RiLogoutBoxRLine className="size-5" />
                 <span className="hidden sm:block">Logout</span>
               </button>
