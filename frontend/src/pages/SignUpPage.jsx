@@ -3,7 +3,7 @@ import { useAuthStore } from "../store/useAuthStore";
 
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import Warn from "../components/Warn";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState();
@@ -12,36 +12,25 @@ const SignUpPage = () => {
     email: "",
     password: ""
   });
-  const [errors, setErrors] = useState({});
 
-  const { signup, isSigningUp, error } = useAuthStore();
+  const { signup, isSigningUp } = useAuthStore();
 
   const validateForm = () => {
-    const newErrors = {};
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = "Full name is required";
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-    }
-    if (!formData.password) {
-      newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password needs at least 6 characters";
-    }
-    setErrors(newErrors);
-    // Return true if no errors exist
-    return Object.keys(newErrors).length === 0;
+    if (!formData.fullName.trim()) return toast.error("Full name is required");
+    if (!formData.email.trim()) return toast.error("Email is required");
+    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
+    if (!formData.password) return toast.error("Password is required");
+    if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
+
+    return true;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      signup(formData);
-    }
+    const sucess = validateForm();
+
+    if (sucess === true) signup(formData);
   };
 
   return (
@@ -60,7 +49,6 @@ const SignUpPage = () => {
               value={formData.fullName}
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
             />
-            {errors.fullName && <Warn message={errors.fullName} />}
           </div>
           <div className="flex flex-col w-full">
             <label htmlFor="email" className="text-zinc-400">Email</label>
@@ -72,7 +60,6 @@ const SignUpPage = () => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             />
-            {errors.email && <Warn message={errors.email} />}
           </div>
           <div className="flex flex-col w-full">
             <label htmlFor="password" className="text-zinc-400">Password</label>
@@ -99,7 +86,6 @@ const SignUpPage = () => {
                 </button>
               )}
             </div>
-            {errors.password && <Warn message={errors.password} />}
           </div>
           <button className="mt-2 py-2 rounded-lg font-semibold bg-sky-600 text-zinc-200 hover:cursor-pointer hover:bg-sky-700" disabled={isSigningUp}>
             {isSigningUp ? (
@@ -115,7 +101,6 @@ const SignUpPage = () => {
             )}
           </button>
         </form>
-        {error && <Warn message={error} />}
         <p className="mt-6 text-center text-sm">
           Already have an account?{" "}
           <Link to="/login" className="font-semibold underline text-sky-500 hover:text-sky-600">
