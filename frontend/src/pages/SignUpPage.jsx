@@ -28,9 +28,9 @@ const SignUpPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const sucess = validateForm();
+    const success = validateForm();
 
-    if (sucess === true) signup(formData);
+    if (success === true) signup(formData);
   };
 
   return (
