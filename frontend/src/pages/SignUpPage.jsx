@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useAuthStore } from "../store/useAuthStore";
 
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { FaMessage, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { TbUserFilled, TbMailFilled, TbLockFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -36,11 +37,20 @@ const SignUpPage = () => {
   return (
     <div className="min-h-screen flex justify-center items-center p-6 sm:p-10">
       <div className="w-80">
-        <h1 className="text-3xl font-bold text-center sm:text-4xl">Sign up</h1>
+        <div className="flex justify-center">
+          <div className="flex items-center gap-x-2">
+            <div className="size-9 rounded-lg bg-sky-600/20 flex items-center justify-center">
+              <FaMessage className="w-5 h-5 text-zinc-200" />
+            </div>
+            <h1 className="text-lg font-bold">Chaty</h1>
+          </div>
+        </div>
+        <h1 className="mt-6 text-3xl font-bold text-center sm:text-4xl">Sign up</h1>
         <p className="mt-4 text-center sm:text-lg">Create an account to get started.</p>
-        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-y-2">
+        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-y-4">
           <div className="flex flex-col w-full">
-            <label htmlFor="fullName" className="text-zinc-400">Full Name</label>
+
+            <label htmlFor="fullName" className="text-zinc-400 flex items-center gap-x-1.5"><TbUserFilled /> Full Name</label>
             <input
               type="text"
               id="fullName"
@@ -48,10 +58,11 @@ const SignUpPage = () => {
               className="mt-1.5 py-2 px-2.5 rounded bg-zinc-800 text-zinc-300  placeholder:text-zinc-500 focus:outline-2 focus:outline-zinc-500 active:outline-zinc-500"
               value={formData.fullName}
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+              autoComplete="off"
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="email" className="text-zinc-400">Email</label>
+            <label htmlFor="email" className="text-zinc-400 flex items-center gap-x-1.5"><TbMailFilled /> Email</label>
             <input
               type="text"
               id="email"
@@ -59,10 +70,11 @@ const SignUpPage = () => {
               className="mt-1.5 py-2 px-2.5 rounded bg-zinc-800 text-zinc-300  placeholder:text-zinc-500 focus:outline-2 focus:outline-zinc-500 active:outline-zinc-500"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              autoComplete="off"
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="password" className="text-zinc-400">Password</label>
+            <label htmlFor="password" className="text-zinc-400 flex items-center gap-x-1.5"><TbLockFilled /> Password</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -71,6 +83,7 @@ const SignUpPage = () => {
                 className="w-full mt-1.5 py-2 px-2.5 pr-10 rounded bg-zinc-800 text-zinc-300  placeholder:text-zinc-500 focus:outline-2 focus:outline-zinc-500 active:outline-zinc-500"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                autoComplete="off"
               />
               {formData.password && (
                 <button
@@ -101,7 +114,7 @@ const SignUpPage = () => {
             )}
           </button>
         </form>
-        <p className="mt-6 text-center text-sm">
+        <p className="mt-12 text-center text-sm">
           Already have an account?{" "}
           <Link to="/login" className="font-semibold underline text-sky-500 hover:text-sky-600">
             Sign in

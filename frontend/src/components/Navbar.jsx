@@ -1,14 +1,14 @@
 import { useAuthStore } from "../store/useAuthStore"
 import { Link } from "react-router-dom";
-import { FaMessage, FaUser, } from "react-icons/fa6";
-import { RiLogoutBoxRLine } from "react-icons/ri";
+import { TbLogout, TbUserFilled } from "react-icons/tb";
+import { FaMessage } from "react-icons/fa6";
 
 const Navbar = () => {
   const { logout, authUser } = useAuthStore();
 
   return authUser && (
     <nav className="bg-zinc-900/80 border-b border-zinc-700 fixed w-full top-0 z-40 backdrop-blur-lg">
-      <div className="mx-auto px-4 h-16 flex justify-between items-center">
+      <div className="mx-auto px-6 h-16 flex justify-between items-center">
         <div className="flex items-center justify-between h-full">
           <Link to="/" className="flex items-center gap-x-2 hover:opacity-80 transition-all">
             <div className="size-9 rounded-lg bg-sky-600/20 flex items-center justify-center">
@@ -20,11 +20,11 @@ const Navbar = () => {
 
         <div className="flex gap-4">
           <Link to="/profile" className="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
-            <FaUser className="size-5" />
+            <TbUserFilled className="size-5" />
             <span className="hidden sm:block">Profile</span>
           </Link>
-          <button className="flex gap-1.5 items-center cursor-pointer hover:opacity-80" onClick={logout}>
-            <RiLogoutBoxRLine className="size-5" />
+          <button className="flex items-center gap-1.5 cursor-pointer hover:opacity-80" onClick={logout}>
+            <TbLogout className="size-5" />
             <span className="hidden sm:block">Logout</span>
           </button>
         </div>
