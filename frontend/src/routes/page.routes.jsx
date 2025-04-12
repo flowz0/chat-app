@@ -9,7 +9,9 @@ import ProfilePage from "../pages/ProfilePage";
 import { useEffect } from "react";
 
 const PageRoutes = () => {
-  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
+
+  console.log({ onlineUsers });
 
   useEffect(() => {
     checkAuth();
