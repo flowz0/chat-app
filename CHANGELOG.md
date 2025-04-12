@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/flowz0/chat-app/compare/v1.0.0...v1.1.0) (2025-04-12)
+
+
+### Bug Fixes
+
+* add padding to Sidebar header ([2102fe0](https://github.com/flowz0/chat-app/commit/2102fe027291d3b15c13ee0e4cae7c0652a8b4b3))
+
+
+### Features
+
+* display messages ([502f193](https://github.com/flowz0/chat-app/commit/502f193698daed422f53f1a5938d9d21ab45aefc))
+* formatMessageTime ([dab5703](https://github.com/flowz0/chat-app/commit/dab5703ace38eea049a92df73321a5657f60e618))
+
 # 1.0.0 (2025-03-14)
 
 
