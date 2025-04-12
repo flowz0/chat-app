@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   return (
     <aside className="w-20 lg:w-72 bg-zinc-800 border-r border-zinc-700 flex flex-col transition-all duration-200">
-      <div className="border-b border-zinc-700 w-full p-4">
+      <div className="border-b border-zinc-700 w-full p-5.5">
         <div className="flex justify-center gap-2">
           <FaUsers className="size-6" />
           <span className="font-medium hidden lg:block">Friends</span>
