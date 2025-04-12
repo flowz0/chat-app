@@ -1,3 +1,19 @@
+# [1.2.0](https://github.com/flowz0/chat-app/compare/v1.1.0...v1.2.0) (2025-04-12)
+
+
+### Features
+
+* connect/disconnect socket & update online users ([387a508](https://github.com/flowz0/chat-app/commit/387a508cbfeb16ffa96bc2bf5e3e6602df0fc7f0))
+* console log online users ([1df2d14](https://github.com/flowz0/chat-app/commit/1df2d1484124304fa3991f28f0be88a5e5ce056c))
+* create server for socket, listen for connections/disconnections, handle online users state ([593b72d](https://github.com/flowz0/chat-app/commit/593b72d0153146b1d8bc9b7c9bbf46ed1ca8e78a))
+* generate & insert random users to db ([f32ba5b](https://github.com/flowz0/chat-app/commit/f32ba5b6bf886332f1038f1d2508d308d578ca58))
+* listen to socket.io server & refactor express app ([fb462bc](https://github.com/flowz0/chat-app/commit/fb462bc1f05f72919a0ed5d68f67fa7076aea699))
+* npm install socket.io-client ([bee5786](https://github.com/flowz0/chat-app/commit/bee5786b42115dba06d5f14693d2b4d6402972ac))
+* send message to user with socket.io ([bf0ec6d](https://github.com/flowz0/chat-app/commit/bf0ec6d354218548550ab9989b0f0bf25279f636))
+* show online users toggle ([1a1848f](https://github.com/flowz0/chat-app/commit/1a1848f9a9214dc61519f7ff8ff926ee4d3e2905))
+* subscribe/unsubscribe to messages with socket & scroll to last message ([0d1d726](https://github.com/flowz0/chat-app/commit/0d1d7269bee67b2308748f407b96bc1337323ba0))
+* subscribe/unsubscribe to messages with socket & update messages state ([e12d449](https://github.com/flowz0/chat-app/commit/e12d449c3b29407d101e737d5c00d713bddb814a))
+
 # [1.1.0](https://github.com/flowz0/chat-app/compare/v1.0.0...v1.1.0) (2025-04-12)
 
 
