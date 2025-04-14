@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/flowz0/chat-app/compare/v1.2.0...v1.3.0) (2025-04-14)
+
+
+### Features
+
+* add LICENSE ([3974a6b](https://github.com/flowz0/chat-app/commit/3974a6b0db554fa00bb0ca03aa6b1e92a3332da0))
+* update README.md ([075e1bd](https://github.com/flowz0/chat-app/commit/075e1bd7b223c522d32b095760762435dcdf20d9))
+
 # [1.2.0](https://github.com/flowz0/chat-app/compare/v1.1.0...v1.2.0) (2025-04-12)
 
 
